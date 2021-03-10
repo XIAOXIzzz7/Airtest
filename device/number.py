@@ -15,6 +15,11 @@ def appid():
     print(f'手机信息:{a}')
     return a['serialno']
 
+def modelid():
+    b = poco.adb_client.get_device_info()
+    return b['model']
+
 
 if __name__ == "__main__":
     appid()
+    modelid()

@@ -1,58 +1,49 @@
 from airtest.core.api import *
-from device.link import link_1
 import random
 
 
-"链接手机"
-link_1()
-print('手机已链接')
-"打开app"
-stop_app('com.road7.phoenix')
-start_app('com.road7.phoenix')
-sleep(15)
-"初始化poco"
-from poco.drivers.unity3d import UnityPoco
-poco = UnityPoco()
 
+def script_chapter_one():
 
-def run():
     """新手引导1"""
 
-    touch(Template(r"photo/tpl1614249615214.png", record_pos=(0.188, 0.161), resolution=(2280, 1080)),duration=0.5,times=2)
+    from tools.init_poco import poco
+
+    touch(Template(r"script/photo/tpl1614249615214.png", record_pos=(0.188, 0.161), resolution=(2280, 1080)),duration=0.5,times=2)
 
     sleep(3)
     poco("btn_close").click()
 
     poco(texture="icon_user").click()
 
-    touch(Template(r"photo/tpl1614238713913.png", record_pos=(-0.075, 0.028), resolution=(2280, 1080)))
-    touch(Template(r"photo/tpl1614564709607.png", record_pos=(-0.211, -0.081), resolution=(2280, 1080)))
+    touch(Template(r"script/photo/tpl1614238713913.png", record_pos=(-0.075, 0.028), resolution=(2280, 1080)))
+    touch(Template(r"script/photo/tpl1614564709607.png", record_pos=(-0.211, -0.081), resolution=(2280, 1080)))
 
     id = random.sample('123213ssd2dasd1ad313adad213',5)
     id = ''.join(id)
     text(f"{id}")
     sleep(0.5)
-    touch(Template(r"photo/tpl1614305522592.png", record_pos=(-0.231, -0.025), resolution=(2280, 1080)))
+    touch(Template(r"script/photo/tpl1614305522592.png", record_pos=(-0.231, -0.025), resolution=(2280, 1080)))
 
     pwd = random.sample('12675hgreta3213daddadaa13213',5)
     pwd = ''.join(pwd)
     text(f"{pwd}")
     sleep(0.5)
-    touch(Template(r"photo/tpl1614238812357.png", record_pos=(-0.03, 0.043), resolution=(2280, 1080)))
+    touch(Template(r"script/photo/tpl1614238812357.png", record_pos=(-0.03, 0.043), resolution=(2280, 1080)))
     age = random.sample('189879d32adad131dada3213',5)
     age = ''.join(age)
     text(f"{age}")
     sleep(0.5)
-    touch(Template(r"photo/tpl1614241892043.png", record_pos=(0.192, 0.106), resolution=(2280, 1080)))
+    touch(Template(r"script/photo/tpl1614241892043.png", record_pos=(0.192, 0.106), resolution=(2280, 1080)))
     sleep(2)
-    touch(Template(r"photo/tpl1614242108276.png", record_pos=(0.188, 0.162), resolution=(2280, 1080)))
+    touch(Template(r"script/photo/tpl1614242108276.png", record_pos=(0.188, 0.162), resolution=(2280, 1080)))
     sleep(2)
     poco("Txt_CurrServer").click()
 
     poco("Txt_CurrServer").click()
     poco("Content").child("ServerItemModel(Clone)")[0].child("Txt_Name").click()
     poco(text='开始游戏').click()
-    touch(Template(r"photo/tpl1614306103574.png", record_pos=(0.191, 0.161), resolution=(2280, 1080)),duration=0.5, times=3)
+    touch(Template(r"script/photo/tpl1614306103574.png", record_pos=(0.191, 0.161), resolution=(2280, 1080)),duration=0.5, times=3)
     poco('Placeholder').click()
     for i in range(8):
         keyevent("67")
@@ -62,7 +53,7 @@ def run():
     poco(text='开始游戏').click()
     poco(text='开始游戏').click()
     sleep(8)
-    touch(Template(r"photo/tpl1614305854630.png", record_pos=(0.186, 0.16), resolution=(2280, 1080)), duration=0.05, times=3)
+    touch(Template(r"script/photo/tpl1614305854630.png", record_pos=(0.186, 0.16), resolution=(2280, 1080)), duration=0.5, times=5)
 
     poco(text="呀，真是熟悉的开场啊。").wait_for_appearance()
     poco("img_exit").click()
@@ -82,7 +73,9 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+
+
+    script_chapter_one()
 
 
 
