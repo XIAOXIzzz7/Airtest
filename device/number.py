@@ -15,6 +15,8 @@ def appid():
     print(f'手机信息:{a}')
     return a['serialno']
 
+
+"获取手机型号"
 def modelid():
     b = poco.adb_client.get_device_info()
     return b['model']

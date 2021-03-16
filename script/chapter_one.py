@@ -7,7 +7,7 @@ def script_chapter_one():
 
     """新手引导1"""
 
-    from tools.init_poco import poco
+    from util.init_poco import poco
 
     touch(Template(r"script/photo/tpl1614249615214.png", record_pos=(0.188, 0.161), resolution=(2280, 1080)),duration=0.5,times=2)
 

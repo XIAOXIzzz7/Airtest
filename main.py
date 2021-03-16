@@ -1,7 +1,9 @@
 from script.chapter_one import *
-from device.link import link_1
+from device.link import link_1, link_report
 from device.open_app import device_open_app
 from log.logger import log_logger
+
+
 
 
 def main_run():
@@ -17,4 +19,8 @@ def main_run():
 
 
 if __name__ == '__main__':
-    main_run()
+    try:
+        main_run()
+    finally:
+        link_report()
+
